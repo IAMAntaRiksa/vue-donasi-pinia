@@ -10,7 +10,6 @@ export const useCategoryStore = defineStore('category', {
         async getCategoriesMenuData() {
             try {
                 const { data } = await Api.get('/categoryHome')
-                console.log(data.data)
                 this.categories = data.data
             } catch (error) {
                 console.log(error)

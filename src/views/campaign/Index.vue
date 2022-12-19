@@ -1,13 +1,6 @@
 <template>
     <div class="pb-20 pt-20">
         <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-5/12">
-
-            <!-- slider -->
-            <div class="grid grid-cols-1 bg-white rounded shadow-md p-1 text-sm">
-                <Slider />
-            </div>
-            <!-- categoryHome -->
-            <CategoryHome />
             <div v-if="campaigns.length > 0">
                 <div class="mt-5 grid grid-cols-4 gap-4" v-for="campaign in campaigns" :key="campaign.id">
                     <div class="col-span-4">
@@ -83,21 +76,17 @@
         </div>
     </div>
 </template>
+
 <script>
+
 import { computed, onMounted } from '@vue/runtime-core';
-import CategoryHome from '../../components/CategoryHome.vue';
-import Slider from '../../components/Slider.vue';
 import { useCampaignStore } from '../../stores/campaign';
-//vue content loader
 import { FacebookLoader } from 'vue-content-loader'
 
 export default {
     components: {
-        CategoryHome,
-        Slider,
         FacebookLoader
     },
-
     setup() {
         const store = useCampaignStore()
 

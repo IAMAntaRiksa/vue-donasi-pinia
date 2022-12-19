@@ -10,15 +10,13 @@ export const useSliderStore = defineStore('slider', {
         async getSlidersData() {
             try {
                 const { data } = await Api.get('/slider')
-                console.log(data.data)
                 this.sliders = data.data
             } catch (error) {
                 console.log(error)
             }
         },
     },
-
     getters: {
         sliderGetter: (state) => state.sliders
     }
-})
+})  

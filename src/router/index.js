@@ -6,6 +6,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/home/Index.vue')
+    },
+    {
+      path: '/campaign/:slug',
+      name: 'detail_campaign',
+      component: () => import('../views/campaign/Show.vue')
+    },
+    {
+      path: '/campaigns',
+      name: 'campaigns',
+      component: () => import('../views/campaign/Index.vue')
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      component: () => import('../views/category/Index.vue')
     }
   ]
 })
