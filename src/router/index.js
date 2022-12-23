@@ -76,6 +76,10 @@ const router = createRouter({
         requiresAuth: true
       }
     },
+    {
+      path: "/*",
+      component: 404,
+    },
   ]
 })
 router.beforeEach((to, from, next) => {
