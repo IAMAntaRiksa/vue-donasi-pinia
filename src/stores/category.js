@@ -4,6 +4,8 @@ import Api from '../api/Api'
 export const useCategoryStore = defineStore('category', {
     state: () => ({
         categories: [],
+        category: {},
+        campaigns: []
     }),
 
     actions: {
@@ -15,9 +17,28 @@ export const useCategoryStore = defineStore('category', {
                 console.log(error)
             }
         },
+        async getCategoriesData() {
+            try {
+                const { data } = await Api.get('/category')
+                this.categories = data.data.data
+            } catch (error) {
+                console.log(error)
+            }
+        },
+        async detailCategoryData(slug) {
+            try {
+                const { data } = await Api.get(`/category/${slug}`)
+                this.category = data.data
+                this.campaigns = data.data.campaigns
+            } catch (error) {
+                console.log(error)
+            }
+        },
     },
 
     getters: {
-        categoriesMenuGetter: (state) => state.categories
+        categoriesMenuGetter: (state) => state.categories,
+        categoriesGetter: (state) => state.categories,
+        detailCategoryGetter: (state) => state.category
     }
 })
