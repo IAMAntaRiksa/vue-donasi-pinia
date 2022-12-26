@@ -93,7 +93,7 @@ router.beforeEach((to, from, next) => {
     if (!auth.isLoggedIn) {
       next()
     } else {
-      next('dashboard')
+      next('/dashboard')
     }
   } else if (to.matched.some(record => record.meta.requiresAuth)) {
     if (!auth.isLoggedIn) {
