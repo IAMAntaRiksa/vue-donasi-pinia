@@ -1,6 +1,8 @@
 <template>
     <div class="pb-20 pt-20">
-        <h1>maintenance</h1>
+        <div class="container mx-auto grid grid-cols-1 p-5 sm:w-full md:w-5/12">
+            <h1>maintenance</h1>
+        </div>
     </div>
 </template>
 

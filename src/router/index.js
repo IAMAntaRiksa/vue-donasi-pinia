@@ -77,6 +77,11 @@ const router = createRouter({
       }
     },
     {
+      path: '/search',
+      name: 'search',
+      component: () => import('../views/search/Index.vue'),
+    },
+    {
       path: "/*",
       component: 404,
     },

@@ -31,6 +31,15 @@ export const useCampaignStore = defineStore('campaign', {
                 console.log(error)
             }
         },
+        async searchCampaign(querySearch = '') {
+            try {
+                const { data } = await Api.get(`/campaign?q=${querySearch}`)
+
+                this.campaigns = data.data.data
+            } catch (error) {
+                console.log(error)
+            }
+        },
     },
     getters: {
         campaignGetter: (state) => state.campaigns,
