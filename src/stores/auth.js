@@ -18,6 +18,8 @@ export const useAuthStore = defineStore('auth', {
 
                         Api.defaults.headers.common['Authorization'] = "Bearer " + token
 
+                        this.token = true
+
                         resolve()
 
                     }).catch((error) => {

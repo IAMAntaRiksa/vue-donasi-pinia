@@ -32,10 +32,10 @@
 
                                                 <p class="text-xs text-gray-500">
                                                     <span class="font-bold text-blue-400">Rp. {{
-                                                            formatPrice(donation.total)
-                                                    }} </span> terkumpul dari
+        formatPrice(donation.total)
+}} </span> terkumpul dari
                                                     <span class="font-bold">Rp. {{ formatPrice(campaign.target_donation)
-                                                    }}</span>
+}}</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                             <p class="text-xs text-gray-500">
                                                 <span class="font-bold text-blue-400">Rp. 0 </span> terkumpul dari
                                                 <span class="font-bold">Rp. {{ formatPrice(campaign.target_donation)
-                                                }}</span>
+}}</span>
                                             </p>
                                         </div>
                                         <div class="mt-3 text-xs">

@@ -94,9 +94,7 @@ export default {
         return {
             campaigns,
         }
-
     }
-
 }
 </script>
 

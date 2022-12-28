@@ -10,7 +10,7 @@
             </div>
 
             <div>
-                <router-link :to="{ name: 'donasi' }"
+                <router-link :to="{ name: 'donation' }"
                     class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
                     <img width="25" height="25" class="inline-block mb-1" src="@/assets/images/heart.png">
                     <span class="block text-xs">Donasi Saya</span>

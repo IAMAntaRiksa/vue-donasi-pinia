@@ -61,11 +61,11 @@
                 </div>
                 <div v-else>
                     <div class="mt-5">
-                        <a href="">
+                        <router-link :to="{ name: 'donation_create', params: {} }">
                             <button
                                 class="bg-yellow-500 py-3 rounded-md shadow-md text-xl w-full uppercase font-bold focus:outline-none focus:bg-yellow-600">Donasi
                                 Sekarang!</button>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
 
@@ -74,15 +74,12 @@
         </div>
 
         <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-5/12">
-
             <div class="bg-white rounded-md shadow-md p-3">
                 <div class="text-lg font-semibold">
                     Penggalang Dana
                 </div>
                 <div class="border-2 border-gray-200 mt-3 mb-2"></div>
-
                 <div class="bg-gray-200 p-3 rounded shadow-md mb-3">
-
                     <div class="grid grid-cols-10 gap-4">
                         <div class="col-span-2">
                             <img :src="user.avatar" class="w-15 h-15 rounded-full shadow">
@@ -92,13 +89,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
         <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-5/12">
-
             <div class="bg-white rounded-md shadow-md p-3">
                 <div class="text-lg font-semibold">
                     Cerita
@@ -106,21 +99,15 @@
                 <div class="border-2 border-gray-200 mt-3 mb-2"></div>
                 <div v-html="campaign.description"></div>
             </div>
-
         </div>
-
         <div class="container mx-auto grid grid-cols-1 p-3 sm:w-full md:w-5/12">
-
             <div class="bg-white rounded-md shadow-md p-3">
                 <div class="text-lg font-semibold">
                     Donasi ({{ donations.length }})
                 </div>
                 <div class="border-2 border-gray-200 mt-3 mb-2"></div>
-
                 <div v-for="donation in donations" :key="donation.id" class="bg-gray-200 p-3 rounded shadow-md mb-3">
-
                     <div class="grid grid-cols-10 gap-4">
-
                         <div class="col-span-1">
                             <img :src="donation.donatur.avatar" class="w-15 h-15 rounded-full">
                         </div>
@@ -132,9 +119,7 @@
                                 Berdonasi sebesar <span class="font-bold">Rp. {{ formatPrice(donation.amount) }}</span>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="grid grid-cols-1 gap-4 mt-3">
                         <div class="text-gray-600 text-sm">
                             {{ donation.pray }}
@@ -143,13 +128,9 @@
                             {{ donation.created_at }}
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </template>
 

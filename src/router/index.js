@@ -61,8 +61,8 @@ const router = createRouter({
       }
     },
     {
-      path: '/donasi',
-      name: 'donasi',
+      path: '/donation',
+      name: 'donation',
       component: () => import('../views/donasi/Index.vue'),
       meta: {
         requiresAuth: true
@@ -72,6 +72,14 @@ const router = createRouter({
       path: '/profile/password',
       name: 'profile.password',
       component: () => import('../views/profile/Password.vue'),
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/donation/create/:slug',
+      name: 'donation_create',
+      component: () => import('../views/donasi/Create.vue'),
       meta: {
         requiresAuth: true
       }

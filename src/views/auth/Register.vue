@@ -58,8 +58,11 @@
 import { reactive, ref } from '@vue/reactivity'
 import { useAuthStore } from '@/stores/auth'
 import { useToast } from "vue-toastification"
+import { useRouter } from 'vue-router'
 export default {
     setup() {
+
+        const router = useRouter()
         const user = reactive({
             name: '',
             email: '',
@@ -81,6 +84,7 @@ export default {
             formData.append('password_confirmation', user.password_confirmation)
 
             store.register(formData).then(() => {
+                router.push({ name: 'dashboard' })
                 toast.success("Register Berhasil!")
             }).catch((error) => {
                 validation.value = error
